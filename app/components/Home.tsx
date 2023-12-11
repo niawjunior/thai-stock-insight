@@ -15,6 +15,7 @@ import { useGetStockSectorsQuery } from "../redux/services/stockApi"
 import SearchInput from "./Search"
 import { useState } from "react"
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore"
+import AddIcon from "@mui/icons-material/Add"
 export default function HomeComponent() {
   const { data: stockSectors, isLoading } = useGetStockSectorsQuery()
 
@@ -33,11 +34,11 @@ export default function HomeComponent() {
         flexDirection: "column",
       }}
     >
-      <SearchInput
+      {/* <SearchInput
         onSubmit={(value: string) => {
           console.log(value)
         }}
-      />
+      /> */}
       {!isLoading && (
         <>
           <Box sx={{ paddingTop: "20px" }}>
@@ -49,6 +50,7 @@ export default function HomeComponent() {
                 marginLeft: "30%",
                 display: "grid",
                 gridTemplateColumns: "100px 100px 100px 150px 150px",
+                marginBottom: "10px",
                 gap: 1,
               }}
             >
@@ -89,6 +91,7 @@ export default function HomeComponent() {
                 expanded={expanded === `panel${sector.name}`}
                 onChange={handleChange(`panel${sector.name}`)}
               >
+                {/* {expanded === `panel${sector.name}` && <AddIcon />} */}
                 <AccordionSummary
                   expandIcon={<ExpandMoreIcon />}
                   aria-controls="panel1bh-content"

@@ -1,5 +1,7 @@
 ThaiStock Insight is an accessible web application meticulously crafted to provide comprehensive stock market data sourced from the Stock Exchange of Thailand (SET).
 
+![alt text](docs/stock-sectors.png)
+
 First, run the development server:
 
 ```bash
