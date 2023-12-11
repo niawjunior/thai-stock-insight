@@ -14,13 +14,13 @@ import ListItemText from "@mui/material/ListItemText"
 import DashboardIcon from "@mui/icons-material/Dashboard"
 import HomeIcon from "@mui/icons-material/Home"
 import StarIcon from "@mui/icons-material/Star"
-import ChecklistIcon from "@mui/icons-material/Checklist"
 import SettingsIcon from "@mui/icons-material/Settings"
 import SupportIcon from "@mui/icons-material/Support"
 import LogoutIcon from "@mui/icons-material/Logout"
-import ThemeRegistry from "./components/ThemeRegistry/ThemeRegistry"
 import StoreIcon from "@mui/icons-material/Store"
 import ShowChartIcon from "@mui/icons-material/ShowChart"
+import ThemeRegistry from "./components/ThemeRegistry/ThemeRegistry"
+import { Providers } from "./redux/provider"
 export const metadata = {
   title: "ThaiStock Insight",
   description: "ThaiStock Insight",
@@ -31,12 +31,10 @@ const DRAWER_WIDTH = 240
 const LINKS = [
   { text: "Home", href: "/", icon: HomeIcon },
   { text: "Starred", href: "/starred", icon: StarIcon },
-  { text: "Market", href: "/market", icon: StoreIcon },
 ]
 
 const PLACEHOLDER_LINKS = [
   { text: "Settings", icon: SettingsIcon },
-  { text: "Support", icon: SupportIcon },
   { text: "Logout", icon: LogoutIcon },
 ]
 
@@ -111,7 +109,7 @@ export default function RootLayout({
               p: 3,
             }}
           >
-            {children}
+            <Providers>{children}</Providers>
           </Box>
         </ThemeRegistry>
       </body>
